@@ -12,7 +12,9 @@
     "plugins": [
         "mariadb"
     ],
-    "packages": [],
+    "packages": [
+        "main"
+    ],
     "stream_distance": 12000.0,
     "stream_update_rate": 0.05,
     "voice": true,
