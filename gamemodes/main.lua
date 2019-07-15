@@ -68,10 +68,10 @@ AddEvent("OnPackageStop", OnPackageStop)
 
 function OnPlayerJoin(player)
     -- Set where the player is going to spawn.
-	SetPlayerSpawnLocation(player, 125773.000000, 80246.000000, 1645.000000, 90.0)
+    SetPlayerSpawnLocation(player, 125773.000000, 80246.000000, 1645.000000, 90.0)
 
-	AddPlayerChatAll("<span color='#eeeeeeaa'>"..GetPlayerName(player).." ("..player..") joined the server</>")
-	AddPlayerChatAll("<span color='#eeeeeeaa'>There are "..GetPlayerCount().." players on the server</>")
+    AddPlayerChatAll("<span color='#eeeeeeaa'>"..GetPlayerName(player).." ("..player..") joined the server</>")
+    AddPlayerChatAll("<span color='#eeeeeeaa'>There are "..GetPlayerCount().." players on the server</>")
     AddPlayerChat(player, "Welcome to `"..GetServerName().."`")
     AddPlayerChat(player, "Game version: "..GetPlayerGameVersion()..", Locale: "..GetPlayerLocale(player))
 
@@ -133,15 +133,15 @@ function OnPlayerChatCommand(player, cmd, exists)
         return AddPlayerChat("Your Steam account hasn't been authenticated yet.")
     end
 
-	if (GetTimeSeconds() - PlayerData[player].cmd_cooldown < 0.5) then
-		CancelChatCommand()
-		return AddPlayerChat(player, "Slow down with your commands")
-	end
+    if (GetTimeSeconds() - PlayerData[player].cmd_cooldown < 0.5) then
+        CancelChatCommand()
+        return AddPlayerChat(player, "Slow down with your commands")
+    end
 
-	PlayerData[player].cmd_cooldown = GetTimeSeconds()
+    PlayerData[player].cmd_cooldown = GetTimeSeconds()
 
-	if (exists == 0) then
-		AddPlayerChat(player, "Command `/"..cmd.."` not found!")
+    if (exists == 0) then
+        AddPlayerChat(player, "Command `/"..cmd.."` not found!")
     end
 end
 AddEvent("OnPlayerChatCommand", OnPlayerChatCommand)
