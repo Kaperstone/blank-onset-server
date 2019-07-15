@@ -1,0 +1,22 @@
+{
+    "servername": "[g]🌴 [c=#00ff00]Base[/c] [c=red]gamemode[/c] 🐦 [i]блять[/i]",
+    "gamemode": "Lets have fun! 🐋",
+    "website_url": "https://playonset.com",
+    "ipaddress": "0.0.0.0",
+    "port": 7777,
+    "maxplayers": 25,
+    "password": "",
+    "timeout": 15000,
+    "iplimit": 2,
+    "masterserver": true,
+    "plugins": [
+        "mariadb"
+    ],
+    "packages": [],
+    "stream_distance": 12000.0,
+    "stream_update_rate": 0.05,
+    "voice": true,
+    "voice_sample_rate": 24000,
+    "voice_distance": 4000.0,
+    "voice_spatialization": true
+}
