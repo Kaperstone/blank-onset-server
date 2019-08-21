@@ -1,6 +1,7 @@
 -- Blank onset server, written by Kaperstone
--- Profile - https://github.com/kaperstone
--- Repository - https://github.com/kaperstone/blank-onset-server
+-- Onset Forums: sudo apt-get update
+-- GitHub Profile: https://github.com/kaperstone
+-- GitHub Repository: https://github.com/kaperstone/blank-onset-server
 
 --
 
@@ -75,6 +76,7 @@ function OnPlayerJoin(player)
     AddPlayerChat(player, "Welcome to `"..GetServerName().."`")
     AddPlayerChat(player, "Game version: "..GetPlayerGameVersion()..", Locale: "..GetPlayerLocale(player))
 
+    PlayerData[player] = {}
     PlayerData[player].isSteamAuth = false
     PlayerData[player] = PlayerColors[Random(0, table.getn(PlayerColors))]
 end

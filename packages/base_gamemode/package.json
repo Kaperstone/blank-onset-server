@@ -1,0 +1,19 @@
+{
+    "author": "Kaperstone <https://forum.playonset.com/member/76-kaperstone>",
+    "version": "0.1",
+    "server_scripts": [
+        "server/main.lua",
+        "server/scoreboard.lua"
+    ],
+    "client_scripts": [
+        "client/scoreboard.lua"
+    ],
+    "files": [
+        "gui/scoreboard/scoreboard.html",
+        "gui/scoreboard/scoreboard.css",
+        "gui/scoreboard/scoreboard.js",
+        "gui/scoreboard/jquery.js",
+        "gui/scoreboard/xbbcode.js",
+        "gui/scoreboard/xbbcode.css"
+    ]
+}
