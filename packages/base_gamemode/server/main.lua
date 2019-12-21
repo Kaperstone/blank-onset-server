@@ -48,7 +48,7 @@ function OnPackageStart()
 
     db = mariadb_connect(config.mariadb.host, config.mariadb.user, config.mariadb.password, config.mariadb.database)
 
-    if(db ~= false) then
+    if(db ~= nil) then
         print("> Successfully connected to MariaDB")
         mariadb_set_charset(db, "utf8mb4")
         mariadb_await_query_file(db, "./setup/accounts.sql")
