@@ -78,7 +78,7 @@ function OnPlayerJoin(player)
 
     PlayerData[player] = {}
     PlayerData[player].isSteamAuth = false
-    PlayerData[player] = PlayerColors[Random(0, table.getn(PlayerColors))]
+    PlayerData[player] = PlayerColors[Random(0, #PlayerColors)]
 end
 AddEvent("OnPlayerJoin", OnPlayerJoin)
 
@@ -201,7 +201,7 @@ AddEvent("OnPlayerServerAuth", OnPlayerServerAuth)
 function OnPlayerSteamAuth(player)
     AddPlayerChat(player, "Your SteamId: "..GetPlayerSteamId(player))
 
-    local query = mariadb_prepare(sql, "SELECT * FROM accounts WHERE steamid = ? LIMIT 1", GetPlayerSteamId(player))
+    local query = mariadb_prepare(db, "SELECT * FROM accounts WHERE steamid = '?' LIMIT 1", tostring(GetPlayerSteamId(player)))
     mariadb_async_query(db, query, OnAccountLoad, player)
 end
 AddEvent("OnPlayerSteamAuth", OnPlayerSteamAuth)
