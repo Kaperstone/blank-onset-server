@@ -74,7 +74,7 @@ function OnPlayerJoin(player)
     AddPlayerChatAll("<span color='#eeeeeeaa'>"..GetPlayerName(player).." ("..player..") joined the server</>")
     AddPlayerChatAll("<span color='#eeeeeeaa'>There are "..GetPlayerCount().." players on the server</>")
     AddPlayerChat(player, "Welcome to `"..GetServerName().."`")
-    AddPlayerChat(player, "Game version: "..GetPlayerGameVersion()..", Locale: "..GetPlayerLocale(player))
+    AddPlayerChat(player, "Game version: "..GetPlayerGameVersion(player)..", Locale: "..GetPlayerLocale(player))
 
     PlayerData[player] = {}
     PlayerData[player].isSteamAuth = false
@@ -201,7 +201,7 @@ AddEvent("OnPlayerServerAuth", OnPlayerServerAuth)
 function OnPlayerSteamAuth(player)
     AddPlayerChat(player, "Your SteamId: "..GetPlayerSteamId(player))
 
-    local query = mariadb_prepare(sql, "SELECT * FROM accounts WHERE steamid = ? LIMIT 1", GetPlayerSteamId())
+    local query = mariadb_prepare(sql, "SELECT * FROM accounts WHERE steamid = ? LIMIT 1", GetPlayerSteamId(player))
     mariadb_async_query(db, query, OnAccountLoad, player)
 end
 AddEvent("OnPlayerSteamAuth", OnPlayerSteamAuth)
