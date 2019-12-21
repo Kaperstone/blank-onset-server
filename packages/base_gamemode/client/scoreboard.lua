@@ -26,7 +26,7 @@ local function OnPackageStart()
 	scoreboard = CreateWebUI(0.0, 0.0, 0.0, 0.0, 5, 10)
 
 	-- Attach's the web code to the gui
-	LoadWebFile(scoreboard, "http://asset/"..GetPackageName().."/scoreboard/gui/scoreboard.html")
+	LoadWebFile(scoreboard, "http://asset/"..GetPackageName().."/gui/scoreboard/scoreboard.html")
 
 	-- We don't want it too big or fullscreen
 	SetWebSize(scoreboard, 1065, 600)

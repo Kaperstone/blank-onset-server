@@ -48,7 +48,7 @@ function OnPackageStart()
 
     db = mariadb_connect(config.mariadb.host, config.mariadb.user, config.mariadb.password, config.mariadb.database)
 
-    if(db ~= false) then
+    if(db ~= nil) then
         print("> Successfully connected to MariaDB")
         mariadb_set_charset(db, "utf8mb4")
         mariadb_await_query_file(db, "./setup/accounts.sql")
@@ -74,7 +74,7 @@ function OnPlayerJoin(player)
     AddPlayerChatAll("<span color='#eeeeeeaa'>"..GetPlayerName(player).." ("..player..") joined the server</>")
     AddPlayerChatAll("<span color='#eeeeeeaa'>There are "..GetPlayerCount().." players on the server</>")
     AddPlayerChat(player, "Welcome to `"..GetServerName().."`")
-    AddPlayerChat(player, "Game version: "..GetPlayerGameVersion()..", Locale: "..GetPlayerLocale(player))
+    AddPlayerChat(player, "Game version: "..GetPlayerGameVersion(player)..", Locale: "..GetPlayerLocale(player))
 
     PlayerData[player] = {}
     PlayerData[player].isSteamAuth = false
